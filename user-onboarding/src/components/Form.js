@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Form = (props) => {
-    console.log(props);
     const onChange = evt => {
         const { name, value, checked, type } = evt.target
         const valueToUse = type === 'checkbox' ? checked : value

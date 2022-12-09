@@ -41,9 +41,9 @@ function App() {
       password: values.password.trim(),
       termsOfUse: ["termsOfUse"].filter(tos => !!values[tos])
     }
-    axios.put('https://reqres.in/api/users', newUser)
+    axios.post('https://reqres.in/api/users', newUser)
     .then(res => {
-      console.log(res)
+      setUser([ res.data, ...user]);
     })
     .catch(err => {
       console.error(err)
@@ -69,13 +69,13 @@ function App() {
         disabled={disabled}
         errors={formErrors}
       />
-      {user.map(user => {
-        <div key={user.id}>
-          <h2>{user.fullName}</h2>
-          <p>{user.email}</p>
+      {user.map(use => {
+        <div key={use.id}>
+          <h2>{use.fullName}</h2>
+          <p>{use.email}</p>
+          <p>{use.createdAt}</p>
         </div>
-      })
-      }
+      })}
     </div>  
   );
 }
