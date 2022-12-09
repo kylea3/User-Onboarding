@@ -15,10 +15,10 @@ const Form = (props) => {
         <form onSubmit={onSubmit}>
             <h2>Create an Account</h2>
             <div className="errors">
-                <div>{props.errors.fullName}</div>
-                <div>{props.errors.email}</div>
-                <div>{props.errors.password}</div>
-                <div>{props.errors.termsOfUse}</div>
+                <div id="nameError">{props.errors.fullName}</div>
+                <div id="emailError">{props.errors.email}</div>
+                <div id="passwordError">{props.errors.password}</div>
+                <div id="tosError">{props.errors.termsOfUse}</div>
             </div>
             <label>Full Name
                 <input 
@@ -44,7 +44,7 @@ const Form = (props) => {
                 onChange={onChange}
                 />
             </label>
-            <label> Terms of Service
+            <label> Terms of Use
                 <input
                 type = 'checkbox'
                 name='termsOfUse'
@@ -52,7 +52,7 @@ const Form = (props) => {
                 onChange={onChange}
                 />
             </label>
-            <button type='submit' disabled={props.disabled}>Submit</button>
+            <button type='submit' id="submitBtn" disabled={props.disabled}>Submit</button>
         </form>
 
     );

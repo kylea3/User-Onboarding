@@ -13,10 +13,10 @@ function App() {
     termsOfUse: false
   }
   const initialFormErrors = {
-    fullName: '',
-    email: '',
-    password: '',
-    termsOfUse: ''
+    fullName: 'Full Name is required',
+    email: 'Must be a valid email address',
+    password: 'Must be 6 chars minimum',
+    termsOfUse: 'This field must be checked'
   }
   const initialDisabled = true;
   const initialUser = []
