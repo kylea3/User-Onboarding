@@ -11,10 +11,8 @@ const formSchema = yup.object().shape({
         .required('You must enter an email'),
     password: yup
         .string()
-        .password()
-        .min(6, 'Must be 6 chars minimum')
-        .minUpperCase(1, 'Must have one uppercase'),
-    termsOfUse: yup.boolean(),
+        .min(6, 'Must be 6 chars minimum'),
+    termsOfUse: yup.boolean().oneOf([true], 'This field must be checked'),
 
 })
 
